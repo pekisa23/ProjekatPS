@@ -38,15 +38,17 @@ namespace ProjekatPS
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Windows.Register reg = new Windows.Register();
-            reg.ShowDialog();
-            this.Close();
+            reg.Show();
+            var mywindow = GetWindow(this);
+            mywindow.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             Windows.Login log = new Windows.Login();
-            log.ShowDialog();
-            this.Close();
+            log.Show();
+            var mywindow = GetWindow(this);
+            mywindow.Close();
 
         }
     }
