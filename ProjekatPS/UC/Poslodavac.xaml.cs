@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,5 +25,26 @@ namespace ProjekatPS.UC
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            String nmbr = phonenumber.Text;
+            int lngt = nmbr.Length;
+            if (String.IsNullOrEmpty(compname.Text) || lngt < 9 || !Regex.IsMatch(phonenumber.Text, @"^\d+$") || lngt > 10 || String.IsNullOrEmpty(username.Text) || String.IsNullOrEmpty(pass.Password))
+            {
+                MessageBox.Show("Unesite podatke!");
+            }
+            else
+            {
+                Firme fir = new Firme(compname.Text, phonenumber.Text, username.Text, pass.Password);
+                Classes.SQLACCESS sqlDataAccess = new Classes.SQLACCESS();
+
+
+                if (sqlDataAccess.SaveFirme(fir))
+                    MessageBox.Show("Korisnik je uspesno kreiran!");
+                else MessageBox.Show("Greska u kreiranju!");
+            }
+        }
+
     }
 }

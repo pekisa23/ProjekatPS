@@ -15,9 +15,6 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
-        <Button
-  Style="{StaticResource MaterialDesignRaisedDarkButton}"
-  ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
-  Content="_DARK" />
+        
     </Grid>
 </Window>

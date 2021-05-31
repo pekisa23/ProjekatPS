@@ -36,7 +36,7 @@
             <Button Margin="100,20,100,20"
   Style="{StaticResource MaterialDesignRaisedButton}"
   ToolTip="Resource name: MaterialDesignRaisedButton"
-  Content="_Potvrdite" />
+  Content="_Potvrdite" Click="Button_Click" />
         </StackPanel>  
     </Grid>
 </UserControl>

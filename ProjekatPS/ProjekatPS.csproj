@@ -104,6 +104,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Firme.cs" />
+    <Compile Include="Classes\SQLACCESS.cs" />
     <Compile Include="Classes\Zaposleni.cs" />
     <Compile Include="UC\Poslodavac.xaml.cs">
       <DependentUpon>Poslodavac.xaml</DependentUpon>
