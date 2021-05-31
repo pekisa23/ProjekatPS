@@ -5,8 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjekatPS.Windows"
         mc:Ignorable="d"
-        Title="AdminPanel" Height="450" Width="800">
-    <Grid>
-        
+        Title="AdminPanel" Height="585" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="White" MouseDown="Grid_MouseDown">
+
+        <Button HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="5"
+                            Height="25"
+                            Width="25" Click="Button_Click"
+  Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+  ToolTip="MaterialDesignFloatingActionMiniLightButton">
+            <materialDesign:PackIcon
+    Kind="ExitToApp"
+    />
+        </Button>
+        <StackPanel Margin="10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <RadioButton
+    Style="{StaticResource MaterialDesignTabRadioButton}"
+    Margin="4"
+    IsChecked="False"
+    Content="Spisak zaposlenih" Name="Spisak1x" Checked="Spisak1" />
+                <RadioButton
+    Style="{StaticResource MaterialDesignTabRadioButton}"
+    Margin="4"
+    IsChecked="False"
+    Content="Spisak firmi" Name="Spisak2x"  Checked="Spisak2" />
+                
+              
+            </StackPanel>
+            <Grid Height="500" >
+                <Grid  x:Name="GridUserControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </StackPanel>
+
     </Grid>
 </Window>

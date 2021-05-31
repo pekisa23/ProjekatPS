@@ -22,6 +22,29 @@ namespace ProjekatPS.Windows
         public AdminPanel()
         {
             InitializeComponent();
+            Spisak1x.IsChecked = true;
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Spisak1(object sender, RoutedEventArgs e)
+        {
+            GridUserControl.Children.Clear();
+            GridUserControl.Children.Add(new UC.SpRadnici());
+        }
+
+        private void Spisak2(object sender, RoutedEventArgs e)
+        {
+            GridUserControl.Children.Clear();
+            GridUserControl.Children.Add(new UC.SpFirme());
         }
     }
 }

@@ -70,7 +70,10 @@ namespace ProjekatPS.Windows
                 }
                 else if (username.Text.Equals("admin") || password.Password.Equals("admin"))
                 {
-                    MessageBox.Show("dobrodosao, admine!");
+                    Windows.AdminPanel adm = new Windows.AdminPanel();
+                    adm.Show();
+                    var mywindow = GetWindow(this);
+                    mywindow.Close();
                 } else
                 {
                     MessageBox.Show("Uneti podaci su pogresni!");

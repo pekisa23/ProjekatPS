@@ -88,6 +88,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UC\SpFirme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\SpRadnici.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AdminPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -116,6 +124,12 @@
     </Compile>
     <Compile Include="UC\Radnik.xaml.cs">
       <DependentUpon>Radnik.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\SpFirme.xaml.cs">
+      <DependentUpon>SpFirme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\SpRadnici.xaml.cs">
+      <DependentUpon>SpRadnici.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\AdminPanel.xaml.cs">
       <DependentUpon>AdminPanel.xaml</DependentUpon>
