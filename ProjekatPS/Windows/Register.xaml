@@ -13,12 +13,37 @@
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}">
-    <Grid>
-        <Button
-  Style="{StaticResource MaterialDesignRaisedAccentButton}"
-  ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-  materialDesign:RippleAssist.IsDisabled="True"
-  Content="NO RIPPLE" />
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="White" MouseDown="Grid_MouseDown">
+        <Button HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="5"
+                            Height="25"
+                            Width="25" Click="Button_Click"
+  Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+  ToolTip="MaterialDesignFloatingActionMiniLightButton">
+            <materialDesign:PackIcon
+    Kind="ExitToApp"
+    />
+        </Button>
+        <StackPanel Margin="10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <RadioButton
+    Style="{StaticResource MaterialDesignTabRadioButton}"
+    Margin="4"
+    IsChecked="False"
+    Content="Registrujte se kao poslodavac" Name="RegisterBTN1" Checked="RgtBtn1" />
+                <RadioButton
+    Style="{StaticResource MaterialDesignTabRadioButton}"
+    Margin="4"
+    IsChecked="False"
+    Content="Registrujte se kao radnik" Name="RegisterBTN2"  Checked="RgtBtn2" />
+            </StackPanel>
+    <Grid Height="360" >
+                <Grid  x:Name="GridUserControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>

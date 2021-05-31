@@ -22,6 +22,29 @@ namespace ProjekatPS.Windows
         public Register()
         {
             InitializeComponent();
+            RegisterBTN1.IsChecked = true;
+        }
+
+        private void RgtBtn1(object sender, RoutedEventArgs e)
+        {
+            GridUserControl.Children.Clear();
+            GridUserControl.Children.Add(new UC.Poslodavac());
+        }
+
+        private void RgtBtn2(object sender, RoutedEventArgs e)
+        {
+            GridUserControl.Children.Clear();
+            GridUserControl.Children.Add(new UC.Radnik());
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

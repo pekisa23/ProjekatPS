@@ -18,11 +18,16 @@ namespace ProjekatPS
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Welcome : Window
     {
-        public MainWindow()
+        public Welcome()
         {
             InitializeComponent();
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -42,6 +47,7 @@ namespace ProjekatPS
             Windows.Login log = new Windows.Login();
             log.ShowDialog();
             this.Close();
+
         }
     }
 }
