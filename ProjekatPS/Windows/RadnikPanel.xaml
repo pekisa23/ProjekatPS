@@ -1,11 +1,11 @@
-﻿<Window x:Class="ProjekatPS.Windows.Login"
+﻿<Window x:Class="ProjekatPS.Windows.RadnikPanel"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjekatPS.Windows"
         mc:Ignorable="d"
-        Title="Login" Height="225" Width="350"
+        Title="RadnikPanel" Height="450" Width="800"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -35,19 +35,11 @@
     Kind="ExitToApp"
     />
         </Button>
-        <StackPanel Margin="20">
-        <TextBox Margin="5"
-  materialDesign:HintAssist.Hint="Username" x:Name="username"
-  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-  VerticalAlignment="Center" />
-            <PasswordBox Margin="5"
-  materialDesign:HintAssist.Hint="Password" x:Name="password"
-  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
-  VerticalAlignment="Center" />
-            <Button Margin="100,20,100,20"
-  Style="{StaticResource MaterialDesignRaisedButton}"
-  Content="_Ulogujte se" Click="Button_Click_1" />
-            
-        </StackPanel>
+        <StackPanel Margin="35">
+            <TextBlock HorizontalAlignment="Center"
+  Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+  Text="Dobrodosli nazad! Vase trenutno mesto zaposlenja je:" />
+            </StackPanel>
+
     </Grid>
 </Window>

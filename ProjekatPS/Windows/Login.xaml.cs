@@ -63,10 +63,24 @@ namespace ProjekatPS.Windows
 
                 if (count == 1 || count1 == 1)
                 {
-                    MessageBox.Show("Uspesno ste se ulogovali!");
 
-                    var myWindow = Window.GetWindow(this);
-                    myWindow.Close();
+                    if (count1 == 1)
+                    {
+                        Windows.RadnikPanel rp = new Windows.RadnikPanel();
+                        rp.Show();
+
+                        var myWindow = Window.GetWindow(this);
+                        myWindow.Close();
+
+                    }
+                    else if (count == 1)
+                    {
+                        Windows.FirmaPanel fp = new Windows.FirmaPanel();
+                        fp.Show();
+                        var myWindow = Window.GetWindow(this);
+                        myWindow.Close();
+
+                    }
                 }
                 else if (username.Text.Equals("admin") || password.Password.Equals("admin"))
                 {
@@ -74,10 +88,12 @@ namespace ProjekatPS.Windows
                     adm.Show();
                     var mywindow = GetWindow(this);
                     mywindow.Close();
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Uneti podaci su pogresni!");
                 }
+            
 
 
             }

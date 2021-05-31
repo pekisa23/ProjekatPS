@@ -16,6 +16,21 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid Background="White">
-        <DataGrid x:Name="Poslodavci" CanUserSortColumns="True" CanUserAddRows="False" />
+        <StackPanel>
+            <DataGrid x:Name="Poslodavci" Height="380" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id Firme" Binding="{Binding id}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Ime Firme" Binding="{Binding imefirme}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Broj telefona" Binding="{Binding brojfona}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Korisnicko ime" Binding="{Binding username}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Lozinka" Binding="{Binding password}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Button
+  Style="{StaticResource MaterialDesignRaisedButton}"
+  HorizontalAlignment="Center" Margin="0,30,0,0"
+  Content="_Stampajte" Click="Button_Click" />
+        </StackPanel>
     </Grid>
 </UserControl>

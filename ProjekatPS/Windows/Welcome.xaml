@@ -50,14 +50,12 @@
                     <Button Margin="10"
   Style="{StaticResource MaterialDesignRaisedButton}"
   
-  ToolTip="Resource name: MaterialDesignRaisedButton"
   Content="Registrujte se" Click="Button_Click_1"/>
                 </Grid>
                 <Grid Grid.Column="1">
                     <Button Margin="10"
   Style="{StaticResource MaterialDesignRaisedButton}"
  
-  ToolTip="Resource name: MaterialDesignRaisedButton"
   Content="Ulogujte se" Click="Button_Click_2" />
                 </Grid>
             </Grid>

@@ -12,31 +12,30 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SimpleWPFReporting;
 
-namespace ProjekatPS.UC
+namespace ProjekatPS.Windows
 {
     /// <summary>
-    /// Interaction logic for SpFirme.xaml
+    /// Interaction logic for FirmaPanel.xaml
     /// </summary>
-    public partial class SpFirme : UserControl
+    public partial class FirmaPanel : Window
     {
-        public SpFirme()
+        public FirmaPanel()
         {
             InitializeComponent();
-            LoadFirme();
+            LoadRadnike();
         }
 
-        private void LoadFirme()
+        private void LoadRadnike()
         {
             try
             {
                 SQLiteConnection connection = new SQLiteConnection("Data Source=database1.db;Version=3;");
                 connection.Open();
                 SQLiteCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT * FROM poslodavci";
+                command.CommandText = "SELECT * FROM radnici";
                 SQLiteDataAdapter DB = new SQLiteDataAdapter(command.CommandText, connection);
                 connection.Close();
 
@@ -45,7 +44,7 @@ namespace ProjekatPS.UC
 
                 if (DS.Tables[0].Rows.Count > 0)
                 {
-                    Poslodavci.ItemsSource = DS.Tables[0].DefaultView;
+                    Radnici.ItemsSource = DS.Tables[0].DefaultView;
                 }
 
 
@@ -57,11 +56,29 @@ namespace ProjekatPS.UC
             }
         }
 
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Windows.Login lgn = new Windows.Login();
+            lgn.Show();
+            var mywindow = GetWindow(this);
+            mywindow.Close();
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             try
             {
-                Report.ExportVisualAsPdf(Poslodavci);
+                Report.ExportVisualAsPdf(Radnici);
 
             }
             finally

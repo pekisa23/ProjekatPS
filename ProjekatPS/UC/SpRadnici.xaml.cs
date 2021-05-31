@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SimpleWPFReporting;
 
 namespace ProjekatPS.UC
 {
@@ -46,7 +47,7 @@ namespace ProjekatPS.UC
                 {
                     Radnici.ItemsSource = DS.Tables[0].DefaultView;
                 }
-               
+
 
 
             }
@@ -56,9 +57,17 @@ namespace ProjekatPS.UC
             }
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Report.ExportVisualAsPdf(Radnici);
 
-        
-      
+            }
+            finally
+            {
+                this.IsEnabled = true;
+            }
+        }
     }
 }

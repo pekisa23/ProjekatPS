@@ -35,7 +35,6 @@
   VerticalAlignment="Center" />
             <Button Margin="100,20,100,20"
   Style="{StaticResource MaterialDesignRaisedButton}"
-  ToolTip="Resource name: MaterialDesignRaisedButton"
   Content="_Potvrdite" Click="Button_Click" />
         </StackPanel>
     </Grid>

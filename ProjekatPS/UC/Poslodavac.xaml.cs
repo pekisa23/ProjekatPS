@@ -37,7 +37,7 @@ namespace ProjekatPS.UC
 
             if (String.IsNullOrEmpty(compname.Text) || lngt3 < 5 || lngt3 > 15 || lngt2 < 5 || lngt2 > 15 || lngt < 9 || !Regex.IsMatch(phonenumber.Text, @"^\d+$") || lngt > 10 || String.IsNullOrEmpty(username.Text) || String.IsNullOrEmpty(pass.Password))
             {
-                MessageBox.Show("Unesite podatke!");
+                MessageBox.Show("Unesite podatke pravilno!");
             }
             else
             {
