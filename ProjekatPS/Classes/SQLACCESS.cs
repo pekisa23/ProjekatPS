@@ -16,6 +16,7 @@ namespace ProjekatPS.Classes
 
         }
 
+
         public bool SaveZaposleni(Zaposleni zap)
         {
             SQLiteConnection sQLiteConnection = new SQLiteConnection("Data Source=database1.db;Version=3;");

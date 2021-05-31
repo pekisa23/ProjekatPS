@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
-
-
-    class Zaposleni
+class Zaposleni
 {
 
     public Zaposleni() { }
@@ -28,6 +27,8 @@ using System.Threading.Tasks;
     public string Password { get; set; }
 
     public bool Status { get; set; }
+
+    
 
 
 }
