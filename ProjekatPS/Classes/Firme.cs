@@ -15,9 +15,6 @@ using System.Threading.Tasks;
             BrojTelefonaF = brojTelefonaf;
             UsernameF = usernamef;
             PasswordF = passwordf;
-            Statusf = 0;
-        zaduzenje = 45000;
-        isplata = false;
         }
 
         public string ImeF { get; set; }
@@ -28,10 +25,6 @@ using System.Threading.Tasks;
 
         public string PasswordF { get; set; }
 
-        public int Statusf { get; set; }
-
-    public double zaduzenje { get; set; }
-
-    public bool isplata { get; set; }
+   
 }
 

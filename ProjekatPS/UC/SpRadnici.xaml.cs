@@ -46,7 +46,7 @@ namespace ProjekatPS.UC
                 {
                     Radnici.ItemsSource = DS.Tables[0].DefaultView;
                 }
-
+               
 
 
             }
@@ -55,5 +55,10 @@ namespace ProjekatPS.UC
                 MessageBox.Show(e.Message);
             }
         }
+
+        
+
+        
+      
     }
 }

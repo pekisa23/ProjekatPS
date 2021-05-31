@@ -16,8 +16,7 @@ class Zaposleni
         BrojTelefona = brojTelefona;
         Username = username;
         Password = password;
-        Status = 0;
-        workFor = 0;
+        
     }
 
     public string Ime { get; set; }
@@ -28,9 +27,7 @@ class Zaposleni
 
     public string Password { get; set; }
 
-    public int Status { get; set; }
-
-    public int workFor { get; set; }
+   
 
     
 

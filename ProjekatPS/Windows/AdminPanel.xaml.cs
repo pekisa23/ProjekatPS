@@ -46,5 +46,16 @@ namespace ProjekatPS.Windows
             GridUserControl.Children.Clear();
             GridUserControl.Children.Add(new UC.SpFirme());
         }
+
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            Windows.Login log = new Windows.Login();
+            log.Show();
+            var mywindow = GetWindow(this);
+            mywindow.Close();
+            
+        }
+
+
     }
 }

@@ -28,9 +28,14 @@ namespace ProjekatPS.UC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            String nmbr = phonenumber.Text;
-            int lngt = nmbr.Length;
-            if (String.IsNullOrEmpty(compname.Text) || lngt < 9 || !Regex.IsMatch(phonenumber.Text, @"^\d+$") || lngt > 10 || String.IsNullOrEmpty(username.Text) || String.IsNullOrEmpty(pass.Password))
+            string lgt1 = phonenumber.Text;
+            int lngt = lgt1.Length;
+            string lgt2 = username.Text;
+            int lngt2 = lgt2.Length;
+            string lgt3 = pass.Password;
+            int lngt3 = lgt3.Length;
+
+            if (String.IsNullOrEmpty(compname.Text) || lngt3 < 5 || lngt3 > 15 || lngt2 < 5 || lngt2 > 15 || lngt < 9 || !Regex.IsMatch(phonenumber.Text, @"^\d+$") || lngt > 10 || String.IsNullOrEmpty(username.Text) || String.IsNullOrEmpty(pass.Password))
             {
                 MessageBox.Show("Unesite podatke!");
             }
@@ -41,7 +46,13 @@ namespace ProjekatPS.UC
 
 
                 if (sqlDataAccess.SaveFirme(fir))
+                { 
                     MessageBox.Show("Korisnik je uspesno kreiran!");
+                    compname.Text = null;
+                    phonenumber.Text = null;
+                    username.Text = null;
+                    pass.Password = null;
+                }
                 else MessageBox.Show("Greska u kreiranju!");
             }
         }

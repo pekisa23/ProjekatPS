@@ -34,8 +34,7 @@
                     <Button HorizontalAlignment="Right"
                             Height="25"
                             Width="25" Click="Button_Click"
-  Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-  ToolTip="MaterialDesignFloatingActionMiniLightButton">
+  Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}">
                         <materialDesign:PackIcon
     Kind="ExitToApp"
     />

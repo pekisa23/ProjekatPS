@@ -16,6 +16,15 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid Background="White">
-        <DataGrid x:Name="Radnici" CanUserSortColumns="True" CanUserAddRows="False"/>
+        <StackPanel>
+            <DataGrid x:Name="Radnici" CanUserSortColumns="True" CanUserAddRows="False" Height="380"/>
+
+            <Button
+  Style="{StaticResource MaterialDesignRaisedButton}"
+  HorizontalAlignment="Center" Margin="0,30,0,0"
+  ToolTip="Resource name: MaterialDesignRaisedButton"
+  Content="_Stampajte" />
+            </StackPanel>
+        
     </Grid>
 </UserControl>

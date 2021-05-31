@@ -46,5 +46,15 @@ namespace ProjekatPS.Windows
         {
             Application.Current.Shutdown();
         }
+
+     private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Welcome welcome = new Welcome();
+            welcome.Show();
+            var mywindow = GetWindow(this);
+            mywindow.Close();
+        }
+
     }
+
 }

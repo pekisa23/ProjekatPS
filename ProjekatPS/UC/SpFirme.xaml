@@ -16,6 +16,6 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid Background="White">
-        <DataGrid x:Name="Poslodavci" CanUserSortColumns="True" CanUserAddRows="False"/>
+        <DataGrid x:Name="Poslodavci" CanUserSortColumns="True" CanUserAddRows="False" />
     </Grid>
 </UserControl>
