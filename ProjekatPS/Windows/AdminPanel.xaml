@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjekatPS.Windows"
         mc:Ignorable="d"
-        Title="AdminPanel" Height="585" Width="800"
+        Title="AdminPanel" Height="615" Width="800"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -54,7 +54,12 @@
             <Grid Height="500" >
                 <Grid  x:Name="GridUserControl" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
+            
         </StackPanel>
+
+        <Button Margin="20" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+  Style="{StaticResource MaterialDesignRaisedButton}"
+  Content="_REFRESH" Click="Button_Click_1" />
 
     </Grid>
 </Window>

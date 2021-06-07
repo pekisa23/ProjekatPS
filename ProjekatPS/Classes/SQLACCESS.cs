@@ -54,11 +54,11 @@ namespace ProjekatPS.Classes
             try
             {
                 SQLiteCommand cmd = new SQLiteCommand(sQLiteConnection);
-                cmd.CommandText = @"UPDATE poslodavci SET brojfona= @brojfona, username = @username, password = @password WHERE imefirme = @imefirme;";
-                cmd.Parameters.AddWithValue("imefirme", GlobZap.ime);
-                cmd.Parameters.AddWithValue("brojfona", GlobZap.brojTelefona);
-                cmd.Parameters.AddWithValue("username", GlobZap.username);
-                cmd.Parameters.AddWithValue("password", GlobZap.password);
+                cmd.CommandText = @"UPDATE poslodavci SET imefirme = @imefirme, username = @username, password = @password, imefirme = @imefirme WHERE brojfona= @brojfona";
+                cmd.Parameters.AddWithValue("imefirme", GlobFir.ime);
+                cmd.Parameters.AddWithValue("brojfona", GlobFir.brojTelefona);
+                cmd.Parameters.AddWithValue("username", GlobFir.username);
+                cmd.Parameters.AddWithValue("password", GlobFir.password);
                 cmd.ExecuteNonQuery();
                 return true;
 
@@ -72,6 +72,77 @@ namespace ProjekatPS.Classes
             finally
             {
                 sQLiteConnection.Close();
+            }
+        }
+
+        public bool UpdateRad()
+        {
+
+            SQLiteConnection sQLiteConnection = new SQLiteConnection("Data Source=database1.db;Version=3;");
+            if (sQLiteConnection.State == ConnectionState.Closed)
+                sQLiteConnection.Open();
+
+            try
+            {
+                SQLiteCommand cmd = new SQLiteCommand(sQLiteConnection);
+                cmd.CommandText = @"UPDATE radnici SET IME= @ime, username = @username, password = @password, radiZa= @radiZa WHERE BRFON = @brojfona;";
+                cmd.Parameters.AddWithValue("ime", GlobZap.ime);
+                cmd.Parameters.AddWithValue("brojfona", GlobZap.brojTelefona);
+                cmd.Parameters.AddWithValue("username", GlobZap.username);
+                cmd.Parameters.AddWithValue("password", GlobZap.password);
+                cmd.Parameters.AddWithValue("radiZa", GlobZap.radiKod);
+                cmd.ExecuteNonQuery();
+                return true;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                sQLiteConnection.Close();
+            }
+
+            
+               
+            }
+
+        public bool CheckZap()
+        {
+            SQLiteConnection sQLiteConnection1 = new SQLiteConnection("Data Source=database1.db;Version=3;");
+            if (sQLiteConnection1.State == ConnectionState.Closed)
+                sQLiteConnection1.Open();
+
+            try
+            {
+                String query1 = "select count(1) from poslodavci where id=CAST (@radiZa as INTEGER)";
+                SQLiteCommand cmd1 = new SQLiteCommand(query1, sQLiteConnection1);
+
+                cmd1.CommandType = CommandType.Text;
+                cmd1.Parameters.AddWithValue("radiZa", Convert.ToInt64(GlobZap.radiKod));
+                int count = Convert.ToInt32(cmd1.ExecuteScalar());
+
+
+
+                if (count == 1)
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                sQLiteConnection1.Close();
             }
         }
 

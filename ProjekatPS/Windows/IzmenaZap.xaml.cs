@@ -15,29 +15,33 @@ using System.Windows.Shapes;
 namespace ProjekatPS.Windows
 {
     /// <summary>
-    /// Interaction logic for IzmenaFir.xaml
+    /// Interaction logic for IzmenaZap.xaml
     /// </summary>
-    public partial class IzmenaFir : Window
+    public partial class IzmenaZap : Window
     {
-        public IzmenaFir()
+        public IzmenaZap()
         {
             InitializeComponent();
-            one.Text = GlobFir.ime;
-            one1.Text = GlobFir.brojTelefona;
-            one2.Text = GlobFir.username;
-            one3.Text = GlobFir.password;
+
+            one1.Text = GlobZap.ime;
+            one2.Text = GlobZap.brojTelefona;
+            one3.Text = GlobZap.username;
+            one4.Text = GlobZap.password;
+            one5.Text = GlobZap.radiKod;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            GlobFir.ime = one.Text;
-            GlobFir.brojTelefona = one1.Text;
-            GlobFir.username = one2.Text;
-            GlobFir.password = one3.Text;
+            GlobZap.ime = one1.Text;
+            GlobZap.brojTelefona = one2.Text;
+            GlobZap.username = one3.Text;
+            GlobZap.password = one4.Text;
+            GlobZap.radiKod = one5.Text;
+
 
             Classes.SQLACCESS sqlAccess = new Classes.SQLACCESS();
 
-            if (sqlAccess.UpdateFir())
+            if (sqlAccess.CheckZap() && sqlAccess.UpdateRad())
             {
                 MessageBox.Show("Korisnik je uspesno apdejtovan!");
             }

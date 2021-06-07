@@ -33,10 +33,6 @@
   HorizontalAlignment="Center" Margin="0,30,0,0"
   Content="_Stampajte" Click="Button_Click" />
 
-                <Button
-  Style="{StaticResource MaterialDesignRaisedButton}"
-  HorizontalAlignment="Center" Margin="30,30,0,0"
-  Content="_Stampajte" Click="Button_Click2" />
                 
             </StackPanel>
 

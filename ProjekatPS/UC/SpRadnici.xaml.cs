@@ -69,5 +69,25 @@ namespace ProjekatPS.UC
                 this.IsEnabled = true;
             }
         }
+
+        private void zaposleniDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            DataRow dtr = ((System.Data.DataRowView)(Radnici.SelectedValue)).Row;
+            GlobZap.id = dtr[0].ToString();
+            GlobZap.ime = (string)dtr[1];
+            GlobZap.brojTelefona = (string)dtr[2];
+            GlobZap.username = (string)dtr[3];
+            GlobZap.password = (string)dtr[4];
+            if (Convert.IsDBNull(dtr[5]))
+            {
+                GlobZap.radiKod = "niko";
+            }
+            else { 
+            GlobZap.radiKod = Convert.ToString(dtr[5]);
+            }
+            Windows.IzmenaZap izZap = new Windows.IzmenaZap();
+            izZap.Show();
+        }
     }
 }

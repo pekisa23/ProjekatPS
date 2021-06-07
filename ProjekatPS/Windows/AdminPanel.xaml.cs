@@ -57,8 +57,19 @@ namespace ProjekatPS.Windows
 
         }
 
-        
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (Spisak1x.IsChecked == true)
+            {
+                GridUserControl.Children.Clear();
+                GridUserControl.Children.Add(new UC.SpRadnici());
+            }
 
-
+            if (Spisak2x.IsChecked == true)
+            {
+                GridUserControl.Children.Clear();
+                GridUserControl.Children.Add(new UC.SpFirme());
+            }
+        }
     }
 }

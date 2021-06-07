@@ -74,18 +74,15 @@ namespace ProjekatPS.UC
         {
 
             DataRow dtr = ((System.Data.DataRowView)(Poslodavci.SelectedValue)).Row;
-            GlobZap.ime = (string)dtr[1];
-            GlobZap.brojTelefona = (string)dtr[2];
-            GlobZap.username = (string)dtr[3];
-            GlobZap.password = (string)dtr[4];
+            GlobFir.id = dtr[0].ToString();
+            GlobFir.ime = (string)dtr[1];
+            GlobFir.brojTelefona = (string)dtr[2];
+            GlobFir.username = (string)dtr[3];
+            GlobFir.password = (string)dtr[4];
             Windows.IzmenaFir izFr = new Windows.IzmenaFir();
             izFr.Show();
         }
 
-        private void Button_Click2(object sender, RoutedEventArgs e)
-        {
-            
-            
-        }
+        
     }
 }
