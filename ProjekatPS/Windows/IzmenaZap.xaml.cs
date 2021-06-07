@@ -54,17 +54,17 @@ namespace ProjekatPS.Windows
 
                 if (!sqlAccess.CheckZap() && !(GlobZap.radiKod == "0"))
                 {
-                    MessageBox.Show("Greska u apdejtovanju! Izaberite postojeci ID firme.");
+                    MessageBox.Show("Greska u apdejtovanju! Izaberite postojeci ID firme.", "Greska pri unosu!");
                 } else
 
                     if (sqlAccess.UpdateRad())
                 {
-                    MessageBox.Show("Korisnik je uspesno apdejtovan!");
+                    MessageBox.Show("Korisnik je uspesno apdejtovan!", "Odradjeno!");
                     var myWindow1 = GetWindow(this);
                     this.Close();
                 }
 
-                else MessageBox.Show("Greska pri unosu u bazu!");
+                else MessageBox.Show("Greska pri unosu u bazu!","Greska pri cuvanju!");
 
                 }
             }

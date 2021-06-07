@@ -50,14 +50,14 @@ namespace ProjekatPS.UC
 
                 if (sqlDataAccess.SaveZaposleni(zap))
                 { 
-                    MessageBox.Show("Korisnik je uspesno kreiran!");
+                    MessageBox.Show("Korisnik je uspesno kreiran!", "Odradjeno!");
                     compname.Text = null;
                     phonenumber.Text = null;
                     username.Text = null;
                     pass.Password = null;
                 }
                 
-                else MessageBox.Show("Greska prilikom cuvanja podataka!");
+                else MessageBox.Show("Greska prilikom cuvanja podataka!","Greska!");
             }
         }
     }

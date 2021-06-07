@@ -48,13 +48,13 @@ namespace ProjekatPS.UC
 
                 if (sqlDataAccess.SaveFirme(fir))
                 { 
-                    MessageBox.Show("Korisnik je uspesno kreiran!");
+                    MessageBox.Show("Korisnik je uspesno kreiran!", "Odradjeno!");
                     compname.Text = null;
                     phonenumber.Text = null;
                     username.Text = null;
                     pass.Password = null;
                 }
-                else MessageBox.Show("Greska u kreiranju!");
+                else MessageBox.Show("Greska u kreiranju!","Greska!");
             }
         }
 

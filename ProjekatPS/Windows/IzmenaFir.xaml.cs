@@ -53,12 +53,12 @@ namespace ProjekatPS.Windows
 
             if (sqlAccess.UpdateFir())
             {
-                MessageBox.Show("Korisnik je uspesno apdejtovan!");
+                MessageBox.Show("Korisnik je uspesno apdejtovan!","Odradjeno!");
                 var myWindow = GetWindow(this);
                 this.Close();
             }
 
-            else MessageBox.Show("Greska u apdejtovanju!");
+            else MessageBox.Show("Greska u apdejtovanju!","Greska!");
             }
         }
 

@@ -100,7 +100,7 @@ namespace ProjekatPS.Windows
                 }
                 else
                 {
-                    MessageBox.Show("Uneti podaci su pogresni!");
+                    MessageBox.Show("Uneti podaci su pogresni!","Greska pri unosu!");
                 }
 
 
