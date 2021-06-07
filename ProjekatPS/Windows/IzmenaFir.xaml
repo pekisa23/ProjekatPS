@@ -17,19 +17,19 @@
     <Grid>
         <StackPanel>
             <TextBox
-  materialDesign:HintAssist.Hint="Floating Hint" x:Name="one"
+  materialDesign:HintAssist.Hint="Ime firme" x:Name="one"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
   VerticalAlignment="Center" />
             <TextBox
-  materialDesign:HintAssist.Hint="Floating Hint" x:Name="one1" IsReadOnly="True"
+  materialDesign:HintAssist.Hint="Broj telefona" x:Name="one1" IsReadOnly="True"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
   VerticalAlignment="Center" />
             <TextBox x:Name="one2"
-  materialDesign:HintAssist.Hint="Floating Hint"
+  materialDesign:HintAssist.Hint="Username"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
   VerticalAlignment="Center" />
             <TextBox x:Name="one3"
-  materialDesign:HintAssist.Hint="Floating Hint"
+  materialDesign:HintAssist.Hint="Password"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
   VerticalAlignment="Center" />
             <Button

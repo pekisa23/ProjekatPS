@@ -81,7 +81,7 @@ namespace ProjekatPS.UC
             GlobZap.password = (string)dtr[4];
             if (Convert.IsDBNull(dtr[5]))
             {
-                GlobZap.radiKod = "niko";
+                GlobZap.radiKod = "";
             }
             else { 
             GlobZap.radiKod = Convert.ToString(dtr[5]);

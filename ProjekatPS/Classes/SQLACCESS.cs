@@ -110,6 +110,40 @@ namespace ProjekatPS.Classes
                
             }
 
+        public bool UpdateRad1()
+        {
+
+            SQLiteConnection sQLiteConnection = new SQLiteConnection("Data Source=database1.db;Version=3;");
+            if (sQLiteConnection.State == ConnectionState.Closed)
+                sQLiteConnection.Open();
+
+            try
+            {
+                SQLiteCommand cmd = new SQLiteCommand(sQLiteConnection);
+                cmd.CommandText = @"UPDATE radnici SET IME= @ime, username = @username, password = @password WHERE BRFON = @brojfona;";
+                cmd.Parameters.AddWithValue("ime", GlobZap.ime);
+                cmd.Parameters.AddWithValue("brojfona", GlobZap.brojTelefona);
+                cmd.Parameters.AddWithValue("username", GlobZap.username);
+                cmd.Parameters.AddWithValue("password", GlobZap.password);
+                cmd.ExecuteNonQuery();
+                return true;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                sQLiteConnection.Close();
+            }
+
+
+
+        }
+
         public bool CheckZap()
         {
             SQLiteConnection sQLiteConnection1 = new SQLiteConnection("Data Source=database1.db;Version=3;");

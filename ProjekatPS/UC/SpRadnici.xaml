@@ -17,7 +17,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid Background="White">
         <StackPanel>
-            <DataGrid x:Name="Radnici" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False" Height="380" SelectionChanged="zaposleniDataGrid_SelectionChanged">
+            <DataGrid x:Name="Radnici" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False" Height="350" SelectionChanged="zaposleniDataGrid_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id Zaposlenog" Binding="{Binding id}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Ime" Binding="{Binding IME}"></DataGridTextColumn>

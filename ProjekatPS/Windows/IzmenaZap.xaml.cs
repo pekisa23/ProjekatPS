@@ -38,19 +38,17 @@ namespace ProjekatPS.Windows
             GlobZap.password = one4.Text;
             GlobZap.radiKod = one5.Text;
 
-
             Classes.SQLACCESS sqlAccess = new Classes.SQLACCESS();
 
-            if (sqlAccess.CheckZap() && sqlAccess.UpdateRad())
-            {
-                MessageBox.Show("Korisnik je uspesno apdejtovan!");
+             if (sqlAccess.UpdateRad() && sqlAccess.CheckZap())
+                {
+                    MessageBox.Show("Korisnik je uspesno apdejtovan!");
+                    var myWindow1 = GetWindow(this);
+                    this.Close();
+                }
+
+                else MessageBox.Show("Greska u apdejtovanju!");
+
             }
-
-            else MessageBox.Show("Greska u apdejtovanju!");
-
-            var myWindow = GetWindow(this);
-            this.Close();
-
-        }
-    }
-}
+       
+    } }
