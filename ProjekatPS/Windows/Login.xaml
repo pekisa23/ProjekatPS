@@ -40,11 +40,15 @@
   materialDesign:HintAssist.Hint="Username" x:Name="username"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
   VerticalAlignment="Center" />
+            <TextBox Margin="5"
+  materialDesign:HintAssist.Hint="id" x:Name="id"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Center" />
             <PasswordBox Margin="5"
   materialDesign:HintAssist.Hint="Password" x:Name="password"
   Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
   VerticalAlignment="Center" />
-            <Button Margin="100,20,100,20"
+            <Button Margin="100,10,100,20"
   Style="{StaticResource MaterialDesignRaisedButton}"
   Content="_Ulogujte se" Click="Button_Click_1" />
             

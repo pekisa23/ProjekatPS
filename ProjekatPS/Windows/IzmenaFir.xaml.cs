@@ -61,5 +61,16 @@ namespace ProjekatPS.Windows
             else MessageBox.Show("Greska u apdejtovanju!");
             }
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var mywindow = GetWindow(this);
+            mywindow.Close();
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }

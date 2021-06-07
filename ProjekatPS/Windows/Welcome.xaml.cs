@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Google.Rpc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Reflection;
+using System.Diagnostics;
 
 namespace ProjekatPS
 {
@@ -51,5 +55,11 @@ namespace ProjekatPS
             mywindow.Close();
 
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Process.Start("file://C:\\Users\\Petar\\source\\repos\\ProjekatPS\\ProjekatPS\\helper1.chm");
+        }
+        }
     }
-}
+

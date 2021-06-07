@@ -50,15 +50,25 @@
                     <Button Margin="10"
   Style="{StaticResource MaterialDesignRaisedButton}"
   
-  Content="Registrujte se" Click="Button_Click_1"/>
+  Content="Registrujte se!" Click="Button_Click_1"/>
                 </Grid>
                 <Grid Grid.Column="1">
                     <Button Margin="10"
   Style="{StaticResource MaterialDesignRaisedButton}"
  
-  Content="Ulogujte se" Click="Button_Click_2" />
+  Content="Ulogujte se!" Click="Button_Click_2" />
                 </Grid>
             </Grid>
         </StackPanel>
+        <Button VerticalAlignment="Bottom"
+      HorizontalAlignment="Right"
+                Margin="5 "
+  Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}" Click="Button_Click_3">
+  <materialDesign:PackIcon
+    Kind="QuestionMark"
+    Height="30"
+    Width="30" 
+      />
+</Button>
     </Grid>
 </Window>

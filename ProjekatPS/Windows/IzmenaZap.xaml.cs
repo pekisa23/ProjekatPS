@@ -52,17 +52,34 @@ namespace ProjekatPS.Windows
             {
                 Classes.SQLACCESS sqlAccess = new Classes.SQLACCESS();
 
-                if (sqlAccess.UpdateRad() && (sqlAccess.CheckZap() || (GlobZap.radiKod == "0")))
+                if (!sqlAccess.CheckZap() && !(GlobZap.radiKod == "0"))
+                {
+                    MessageBox.Show("Greska u apdejtovanju! Izaberite postojeci ID firme.");
+                } else
+
+                    if (sqlAccess.UpdateRad())
                 {
                     MessageBox.Show("Korisnik je uspesno apdejtovan!");
                     var myWindow1 = GetWindow(this);
                     this.Close();
                 }
 
-                else MessageBox.Show("Greska u apdejtovanju!");
+                else MessageBox.Show("Greska pri unosu u bazu!");
 
+                }
+            }
+        
+
+            private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+            {
+                DragMove();
+            }
+
+            private void Button_Click_2(object sender, RoutedEventArgs e)
+            {
+                var mywindow = GetWindow(this);
+                mywindow.Close();
             }
         }
 
-    }
 }

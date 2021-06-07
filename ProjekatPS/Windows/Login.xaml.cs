@@ -53,12 +53,13 @@ namespace ProjekatPS.Windows
                 cmd1.Parameters.AddWithValue("password", password.Password);
                 int count1 = Convert.ToInt32(cmd1.ExecuteScalar());
 
-                String query = "select count(1) from poslodavci where username=@username and password=@password";
+                String query = "select count(1) from poslodavci where username=@username and password=@password and id= CAST (@id AS INTEGER)";
                 SQLiteCommand cmd = new SQLiteCommand(query, sQLiteConnection);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("username", username.Text);
                 cmd.Parameters.AddWithValue("password", password.Password);
+                cmd.Parameters.AddWithValue("id", id.Text);
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
 
                 if (count == 1 || count1 == 1)
@@ -66,15 +67,23 @@ namespace ProjekatPS.Windows
 
                     if (count1 == 1)
                     {
+                        GlobZap.username = username.Text;
+                        GlobZap.password = password.Password; 
+                        
+
                         Windows.RadnikPanel rp = new Windows.RadnikPanel();
                         rp.Show();
-
+                        
                         var myWindow = Window.GetWindow(this);
                         myWindow.Close();
 
                     }
                     else if (count == 1)
                     {
+                        GlobFir.username = username.Text;
+                        GlobFir.password = password.Password;
+                        GlobFir.id = id.Text;
+
                         Windows.FirmaPanel fp = new Windows.FirmaPanel();
                         fp.Show();
                         var myWindow = Window.GetWindow(this);

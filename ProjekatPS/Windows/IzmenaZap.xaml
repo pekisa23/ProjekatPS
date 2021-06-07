@@ -13,33 +13,44 @@
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}">
-    <Grid>
-        <StackPanel>
-            <TextBox
+        FontFamily="{DynamicResource MaterialDesignFont}"
+    WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid MouseDown="Grid_MouseDown" Background="White">
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Height="25" Margin="5"
+                            Width="25" Click="Button_Click_2"
+  Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}">
+            <materialDesign:PackIcon
+    Kind="ArrowBack"
+   />
+        </Button>
+        <StackPanel Margin="50">
+            
+            <TextBox Margin="5"
   materialDesign:HintAssist.Hint="Ime" x:Name="one1"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
   VerticalAlignment="Center" />
-            <TextBox x:Name="one2" IsReadOnly="True"
+            <TextBox x:Name="one2" IsReadOnly="True" Margin="5"
   materialDesign:HintAssist.Hint="Broj telefona"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
   VerticalAlignment="Center" />
-            <TextBox x:Name="one3"
+            <TextBox x:Name="one3" Margin="5"
   materialDesign:HintAssist.Hint="Username"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
   VerticalAlignment="Center" />
-            <TextBox x:Name="one4"
+            <TextBox x:Name="one4" Margin="5"
   materialDesign:HintAssist.Hint="Password"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
   VerticalAlignment="Center" />
-            <TextBox
+            <TextBox Margin="5"
   materialDesign:HintAssist.Hint="Id firme u kojoj je zaposlen" x:Name="one5"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
   VerticalAlignment="Center" />
             <Button
   Style="{StaticResource MaterialDesignRaisedButton}"
-  ToolTip="Resource name: MaterialDesignRaisedButton"
-  Content="_MID" Margin="0,30,0,0" Click="Button_Click" />
+  Content="_Potvrdite izmene" Margin="150,50,150,50" Click="Button_Click" />
         </StackPanel>
     </Grid>
 </Window>

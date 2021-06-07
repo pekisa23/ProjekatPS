@@ -40,7 +40,7 @@
         <StackPanel Margin="35">
             <TextBlock
   Style="{StaticResource MaterialDesignHeadline6TextBlock}"
-  Text="Dobrodosli nazad! Lista dostupnih radnika se nalazi ispod:" HorizontalAlignment="Center" />
+  Text="Dobrodosli nazad" HorizontalAlignment="Center" Initialized="TextBlock_Initialized" x:Name="txtblk"/>
             <DataGrid x:Name="Radnici" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False" Height="260" HorizontalAlignment="Center" Margin="0,10,0,10">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Ime" Binding="{Binding IME}"></DataGridTextColumn>

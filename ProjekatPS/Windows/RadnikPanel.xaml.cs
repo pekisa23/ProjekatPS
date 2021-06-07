@@ -41,5 +41,10 @@ namespace ProjekatPS.Windows
         {
             Application.Current.Shutdown();
         }
+
+        private void txtblk_Initialized(object sender, EventArgs e)
+        {
+            txtblk.Text = "Dobrodosli nazad, " + GlobZap.username + "! Zelimo vam prijatan rad!";
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace ProjekatPS.Windows
                 SQLiteConnection connection = new SQLiteConnection("Data Source=database1.db;Version=3;");
                 connection.Open();
                 SQLiteCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT * FROM radnici";
+                command.CommandText = "SELECT * FROM radnici WHERE radiZa='"+GlobFir.id+"'";
                 SQLiteDataAdapter DB = new SQLiteDataAdapter(command.CommandText, connection);
                 connection.Close();
 
@@ -85,6 +85,11 @@ namespace ProjekatPS.Windows
             {
                 this.IsEnabled = true;
             }
+        }
+
+        private void TextBlock_Initialized(object sender, EventArgs e)
+        {
+            txtblk.Text = "Dobrodosli nazad, " + GlobFir.username + "! Spisak vasih radnika izgleda ovako:";
         }
     }
 }

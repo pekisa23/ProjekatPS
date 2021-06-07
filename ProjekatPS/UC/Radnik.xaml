@@ -35,7 +35,7 @@
   VerticalAlignment="Center" />
             <Button Margin="100,20,100,20"
   Style="{StaticResource MaterialDesignRaisedButton}"
-  Content="_Potvrdite" Click="Button_Click" />
+  Content="_Potvrdite registraciju" Click="Button_Click" />
         </StackPanel>
     </Grid>
 </UserControl>
