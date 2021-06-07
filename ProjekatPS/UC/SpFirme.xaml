@@ -17,7 +17,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid Background="White">
         <StackPanel>
-            <DataGrid x:Name="Poslodavci" Height="380" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False">
+            <DataGrid x:Name="Poslodavci" Height="380" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False" SelectionChanged="zaposleniDataGrid_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id Firme" Binding="{Binding id}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Ime Firme" Binding="{Binding imefirme}"></DataGridTextColumn>
@@ -26,11 +26,20 @@
                     <DataGridTextColumn Header="Lozinka" Binding="{Binding password}"></DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>
+            <StackPanel Orientation="Horizontal">
 
-            <Button
+                <Button
   Style="{StaticResource MaterialDesignRaisedButton}"
   HorizontalAlignment="Center" Margin="0,30,0,0"
   Content="_Stampajte" Click="Button_Click" />
+
+                <Button
+  Style="{StaticResource MaterialDesignRaisedButton}"
+  HorizontalAlignment="Center" Margin="30,30,0,0"
+  Content="_Stampajte" Click="Button_Click2" />
+                
+            </StackPanel>
+
         </StackPanel>
     </Grid>
 </UserControl>

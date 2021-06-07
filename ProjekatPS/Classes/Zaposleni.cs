@@ -27,7 +27,6 @@ class Zaposleni
 
     public string Password { get; set; }
 
-   
 
     
 

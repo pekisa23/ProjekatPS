@@ -113,6 +113,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\IzmenaFir.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,6 +138,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\Firme.cs" />
+    <Compile Include="Classes\GlobZap.cs" />
     <Compile Include="Classes\SQLACCESS.cs" />
     <Compile Include="Classes\Zaposleni.cs" />
     <Compile Include="UC\Poslodavac.xaml.cs">
@@ -153,6 +158,9 @@
     </Compile>
     <Compile Include="Windows\FirmaPanel.xaml.cs">
       <DependentUpon>FirmaPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\IzmenaFir.xaml.cs">
+      <DependentUpon>IzmenaFir.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>

@@ -69,5 +69,23 @@ namespace ProjekatPS.UC
                 this.IsEnabled = true;
             }
         }
+
+        private void zaposleniDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            DataRow dtr = ((System.Data.DataRowView)(Poslodavci.SelectedValue)).Row;
+            GlobZap.ime = (string)dtr[1];
+            GlobZap.brojTelefona = (string)dtr[2];
+            GlobZap.username = (string)dtr[3];
+            GlobZap.password = (string)dtr[4];
+            Windows.IzmenaFir izFr = new Windows.IzmenaFir();
+            izFr.Show();
+        }
+
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
+            
+            
+        }
     }
 }
