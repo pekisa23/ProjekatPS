@@ -79,6 +79,7 @@ namespace ProjekatPS.UC
             GlobFir.brojTelefona = (string)dtr[2];
             GlobFir.username = (string)dtr[3];
             GlobFir.password = (string)dtr[4];
+            
             Windows.IzmenaFir izFr = new Windows.IzmenaFir();
             izFr.Show();
         }

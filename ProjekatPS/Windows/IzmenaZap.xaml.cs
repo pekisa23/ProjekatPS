@@ -38,9 +38,21 @@ namespace ProjekatPS.Windows
             GlobZap.password = one4.Text;
             GlobZap.radiKod = one5.Text;
 
-            Classes.SQLACCESS sqlAccess = new Classes.SQLACCESS();
+            Zaposleni zap = new Zaposleni(GlobZap.ime, GlobZap.brojTelefona, GlobZap.username, GlobZap.password);
+            var ValidatorZaposleni = new ValidatorZaposleni();
+            var result = ValidatorZaposleni.Validate(zap);
+            if (!result.IsValid)
+            {
+                foreach (var faliure in result.Errors)
+                {
+                    MessageBox.Show(faliure.ErrorMessage);
+                }
+            }
+            else
+            {
+                Classes.SQLACCESS sqlAccess = new Classes.SQLACCESS();
 
-             if (sqlAccess.UpdateRad() && sqlAccess.CheckZap())
+                if (sqlAccess.UpdateRad() && (sqlAccess.CheckZap() || (GlobZap.radiKod == "0")))
                 {
                     MessageBox.Show("Korisnik je uspesno apdejtovan!");
                     var myWindow1 = GetWindow(this);
@@ -50,5 +62,7 @@ namespace ProjekatPS.Windows
                 else MessageBox.Show("Greska u apdejtovanju!");
 
             }
-       
-    } }
+        }
+
+    }
+}

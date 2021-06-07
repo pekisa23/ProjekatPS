@@ -93,6 +93,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\GlobZap.cs" />
+    <Compile Include="Validators\ValidatorFirma.cs" />
+    <Compile Include="Validators\ValidatorZaposleni.cs" />
     <Compile Include="Windows\IzmenaZap.xaml.cs">
       <DependentUpon>IzmenaZap.xaml</DependentUpon>
     </Compile>

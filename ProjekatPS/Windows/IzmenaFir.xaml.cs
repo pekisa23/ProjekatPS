@@ -30,12 +30,26 @@ namespace ProjekatPS.Windows
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
+
             GlobFir.ime = one.Text;
             GlobFir.brojTelefona = one1.Text;
             GlobFir.username = one2.Text;
             GlobFir.password = one3.Text;
 
-            Classes.SQLACCESS sqlAccess = new Classes.SQLACCESS();
+            Firme fir = new Firme(GlobFir.ime, GlobFir.brojTelefona, GlobFir.username, GlobFir.password);
+            var ValidatorFirma = new ValidatorFirma();
+            var result = ValidatorFirma.Validate(fir);
+            if (!result.IsValid)
+            {
+                foreach (var faliure in result.Errors)
+                {
+                    MessageBox.Show(faliure.ErrorMessage);
+                }
+            }
+            else
+            { 
+                Classes.SQLACCESS sqlAccess = new Classes.SQLACCESS();
 
             if (sqlAccess.UpdateFir())
             {
@@ -45,7 +59,7 @@ namespace ProjekatPS.Windows
             }
 
             else MessageBox.Show("Greska u apdejtovanju!");
-
+            }
         }
     }
 }

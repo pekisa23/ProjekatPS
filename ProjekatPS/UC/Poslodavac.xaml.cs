@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentValidation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,20 +29,20 @@ namespace ProjekatPS.UC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string lgt1 = phonenumber.Text;
-            int lngt = lgt1.Length;
-            string lgt2 = username.Text;
-            int lngt2 = lgt2.Length;
-            string lgt3 = pass.Password;
-            int lngt3 = lgt3.Length;
+            Firme fir = new Firme(compname.Text, phonenumber.Text, username.Text, pass.Password);
 
-            if (String.IsNullOrEmpty(compname.Text) || lngt3 < 5 || lngt3 > 15 || lngt2 < 5 || lngt2 > 15 || lngt < 9 || !Regex.IsMatch(phonenumber.Text, @"^\d+$") || lngt > 10 || String.IsNullOrEmpty(username.Text) || String.IsNullOrEmpty(pass.Password))
+            var ValidatorFirma = new ValidatorFirma();
+            var result = ValidatorFirma.Validate(fir);
+            if (!result.IsValid)
             {
-                MessageBox.Show("Unesite podatke pravilno!");
+                foreach (var faliure in result.Errors)
+                {
+                    MessageBox.Show(faliure.ErrorMessage);
+                }
             }
             else
             {
-                Firme fir = new Firme(compname.Text, phonenumber.Text, username.Text, pass.Password);
+                
                 Classes.SQLACCESS sqlDataAccess = new Classes.SQLACCESS();
 
 
